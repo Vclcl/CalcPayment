@@ -9,5 +9,10 @@ namespace CalcModel
     {
         public DateTime Date { get; set; }
         public decimal Sum { get; set; }
+        public Payment(DateTime date, decimal sum)
+        {
+            Date = date;
+            Sum = sum;
+        }
     }
 }

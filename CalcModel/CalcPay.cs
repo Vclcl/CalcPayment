@@ -12,5 +12,21 @@ namespace CalcModel
         public decimal NDS { get; set; }
         public int CountPayment { get; set; }
         public DateTime FirstDate { get; set; }
+        public decimal SumWithNDS()
+        {
+            return Sum * (NDS / 100 + 1m);
+        }
+        public decimal GetTotalSum()
+        {
+            return SumWithNDS() * ExchangeRate;
+        }
+        public IEnumerable<Payment> PaymentShedule()
+        {
+            decimal MounthPayment = GetTotalSum() / CountPayment;
+            for (int i = 0; i < CountPayment; i++)
+            {
+                yield return new Payment(FirstDate.AddMonths(i), MounthPayment);
+            }
+        }
     }
 }
