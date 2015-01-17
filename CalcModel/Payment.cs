@@ -5,13 +5,18 @@ using System.Text;
 
 namespace CalcModel
 {
-    public class Payment
+    public struct Payment
     {
-        public DateTime Date { get; set; }
-        public decimal Sum { get; set; }
+        public DateTime Date;
+        public decimal Sum;
         public Payment(DateTime date, decimal sum)
         {
             Date = date;
+            Sum = sum;
+        }
+        public Payment(int year, int month, int day, decimal sum)
+        {
+            Date = new DateTime(year, month, day);
             Sum = sum;
         }
     }
