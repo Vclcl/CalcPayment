@@ -1,0 +1,66 @@
+﻿@model MvcApplication.Models.CalcView
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>CalcView</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Sum)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Sum)
+            @Html.ValidationMessageFor(model => model.Sum)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ExchangeRate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ExchangeRate)
+            @Html.ValidationMessageFor(model => model.ExchangeRate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NDS)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NDS)
+            @Html.ValidationMessageFor(model => model.NDS)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CountPayment)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CountPayment)
+            @Html.ValidationMessageFor(model => model.CountPayment)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FirstDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FirstDate)
+            @Html.ValidationMessageFor(model => model.FirstDate)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
