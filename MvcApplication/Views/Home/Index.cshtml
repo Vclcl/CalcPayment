@@ -1,18 +1,18 @@
 ﻿@model MvcApplication.Models.CalcView
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Расчет платежей";
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Расчет платежей</h2>
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>CalcView</legend>
+        <legend>Исходные данные</legend>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.Sum)
@@ -63,7 +63,15 @@
 <div>
     @if (Model != null)
     {
-        <table>
+        <table border="1">
+            <tr>
+                <td>
+                    Дата платежа
+                </td>
+                <td>
+                    Сумма
+                </td>
+            </tr>
             @foreach (var item in Model.PaymentShedule)
             {
                 <tr>
@@ -77,8 +85,5 @@
             }
         </table>
     }
-
-    
-    @Html.ActionLink("Back to List", "Index")
 </div>
 
