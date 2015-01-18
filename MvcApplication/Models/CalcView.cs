@@ -29,6 +29,6 @@ namespace MvcApplication.Models
         [Required(ErrorMessage = "Дата первого платежа незаполнена")]
         public DateTime FirstDate { get; set; }
 
-        IEnumerable<Payment> PaymentShedule { get; set;}
+        public IEnumerable<Payment> PaymentShedule { get; set;}
     }
 }

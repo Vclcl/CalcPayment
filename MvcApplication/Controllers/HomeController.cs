@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MvcApplication.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +14,25 @@ namespace MvcApplication.Controllers
 
         public ActionResult Index()
         {
+            return View();
+        }
+
+        
+        [HttpPost]
+        [ActionName("Index")]
+        public ActionResult Result(CalcView input)
+        {
+            if (ModelState.IsValid)
+            {
+                CalcModel.CalcPay calc = new CalcModel.CalcPay();
+                calc.CountPayment = input.CountPayment;
+                calc.ExchangeRate = input.ExchangeRate;
+                calc.FirstDate = input.FirstDate;
+                calc.NDS = input.NDS;
+                calc.Sum = input.Sum;
+                input.PaymentShedule = calc.PaymentShedule();
+                return View(input);
+            }
             return View();
         }
 

@@ -55,12 +55,30 @@
         </div>
 
         <p>
-            <input type="submit" value="Save" />
+            <input type="submit" value="Рассчитать" />
         </p>
     </fieldset>
 }
 
 <div>
+    @if (Model != null)
+    {
+        <table>
+            @foreach (var item in Model.PaymentShedule)
+            {
+                <tr>
+                    <td>
+                        @item.Date
+                    </td>
+                    <td>
+                        @item.Sum
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+
+    
     @Html.ActionLink("Back to List", "Index")
 </div>
 
