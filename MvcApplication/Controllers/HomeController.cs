@@ -31,6 +31,7 @@ namespace MvcApplication.Controllers
                 calc.NDS = input.NDS;
                 calc.Sum = input.Sum;
                 input.PaymentShedule = calc.PaymentShedule();
+                input.TotalSum = calc.GetTotalSum();
                 return View(input);
             }
             return View();

@@ -32,5 +32,8 @@ namespace MvcApplication.Models
         public DateTime FirstDate { get; set; }
 
         public IEnumerable<Payment> PaymentShedule { get; set;}
+
+        [Display(Name = "Итого")]
+        public decimal TotalSum { get; set; }
     }
 }
