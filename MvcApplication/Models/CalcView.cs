@@ -25,6 +25,8 @@ namespace MvcApplication.Models
         [Required(ErrorMessage = "Количество платежей незаполнено")]
         public int CountPayment { get; set; }
 
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd'/'MM'/'yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "Дата первого платежа")]
         [Required(ErrorMessage = "Дата первого платежа незаполнена")]
         public DateTime FirstDate { get; set; }
