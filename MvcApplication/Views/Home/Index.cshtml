@@ -63,6 +63,9 @@
 <div>
     @if (Model != null)
     {
+        <p>
+            График платежей в рублях:
+        </p>
         <table border="1">
             <tr>
                 <td>
@@ -84,9 +87,10 @@
                 </tr>
             }
         </table>
-        <p>
-            Итого: @Model.TotalSum.ToString()
-        </p>
+        <div>
+            @Html.DisplayNameFor(model => model.TotalSum)
+            @Html.DisplayFor(model => model.TotalSum)
+        </div>
     }
 </div>
 
