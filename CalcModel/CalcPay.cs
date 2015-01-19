@@ -7,8 +7,26 @@ namespace CalcModel
 {
     public class CalcPay
     {
+        private string _currency = "";
+        private RateRepository _rate = new RateRepository();
+
         public decimal Sum { get; set; }
         public decimal ExchangeRate { get; set; }
+        public string Currency
+        {
+            get { return _currency; }
+            set 
+            {
+                _currency = value;
+                ExchangeRate = _rate.ExchangeRate(_currency);
+            }
+        }
+
+        public IEnumerable<string> CurrencyCollection()
+        {
+            return _rate.CurrencyCollection();
+        }
+        
         public decimal NDS { get; set; }
         public int CountPayment { get; set; }
         public DateTime FirstDate { get; set; }

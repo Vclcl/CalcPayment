@@ -5,16 +5,18 @@ using System.Text;
 
 namespace CalcModel
 {
-    public class RateRepository
+    class RateRepository
     {
         CurrencyState[] _currencyList = { new CurrencyState("USD", 64.422m),
                                           new CurrencyState("EUR", 74.693m),
                                           new CurrencyState("GBP", 98.3889m)};
-        IEnumerable<string> CurrencyCollection()
+
+        public IEnumerable<string> CurrencyCollection()
         {
             return _currencyList.Select(x => x.Name);
         }
-        decimal ExchangeRate(string currencyName)
+
+        public decimal ExchangeRate(string currencyName)
         {
             CurrencyState instance = _currencyList.FirstOrDefault(x => x.Name == currencyName);
             if (instance != null)

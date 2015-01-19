@@ -58,6 +58,24 @@ namespace WpfAppl
             get { return _calcPay.GetTotalSum(); }
         }
 
+        public IEnumerable<string> CurrencyCollection
+        {
+            get { return _calcPay.CurrencyCollection(); }
+        }
+
+        public string Currency
+        {
+            get { return _calcPay.Currency; }
+            set 
+            {
+                _calcPay.Currency = value;
+                NotifyPropertyChanged("ExchangeRate");
+                NotifyPropertyChanged("TotalSum");
+                NotifyPropertyChanged("PaymentShedule");}
+        }
+        
+        
+
         public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged(String propertyName = "")
         {
