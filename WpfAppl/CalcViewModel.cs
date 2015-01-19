@@ -34,7 +34,7 @@ namespace WpfAppl
         public DateTime FirstDate
         {
             get { return _calcPay.FirstDate; }
-            set { _calcPay.FirstDate = value; NotifyPropertyChanged("TotalSum"); NotifyPropertyChanged("PaymentShedule"); }
+            set { _calcPay.FirstDate = value; NotifyPropertyChanged("PaymentShedule"); }
         }
 
         public int CountPayment
