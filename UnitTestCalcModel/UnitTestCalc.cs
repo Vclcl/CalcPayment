@@ -15,7 +15,7 @@ namespace UnitTestCalcModel
             calc.Sum = 125000m;
             calc.ExchangeRate = 33.78m;
             calc.NDS = 18m;
-            Assert.AreEqual(calc.GetTotalSum(), 4982550m);
+            Assert.AreEqual(4982550m, calc.GetTotalSum());
         }
         [TestMethod]
         public void TestPaymentShedule()
