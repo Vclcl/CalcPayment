@@ -40,10 +40,10 @@ namespace CalcModel
         }
         public IEnumerable<Payment> PaymentShedule()
         {
-            decimal MounthPayment = GetTotalSum() / CountPayment;
+            decimal MonthPayment = GetTotalSum() / CountPayment;
             for (int i = 0; i < CountPayment; i++)
             {
-                yield return new Payment(FirstDate.AddMonths(i), MounthPayment);
+                yield return new Payment(FirstDate.AddMonths(i), MonthPayment);
             }
         }
     }
