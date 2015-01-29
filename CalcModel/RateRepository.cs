@@ -5,7 +5,10 @@ using System.Text;
 
 namespace CalcModel
 {
-    class RateRepository
+    /// <summary>
+    /// Тестовая реализация репозитория курсов валют
+    /// </summary>
+    class RateRepository : IRateRepository
     {
         CurrencyState[] _currencyList = { new CurrencyState("USD", 64.422m),
                                           new CurrencyState("EUR", 74.693m),

@@ -8,7 +8,7 @@ namespace CalcModel
     public class CalcPay
     {
         private string _currency = "";
-        private RateRepository _rate = new RateRepository();
+        private IRateRepository _rate = new RateRepository();
 
         public decimal Sum { get; set; }
         public decimal ExchangeRate { get; set; }

@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="CalcPay.cs" />
     <Compile Include="Currency.cs" />
+    <Compile Include="IRateRepository.cs" />
     <Compile Include="Payment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RateRepository.cs" />

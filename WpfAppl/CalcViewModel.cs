@@ -16,31 +16,61 @@ namespace WpfAppl
         public decimal Sum
         {
             get { return _calcPay.Sum; }
-            set { _calcPay.Sum = value; NotifyPropertyChanged("TotalSum"); NotifyPropertyChanged("PaymentShedule"); }
+            set
+            {
+                _calcPay.Sum = value;
+                NotifyPropertyChanged("Sum");
+                NotifyPropertyChanged("TotalSum");
+                NotifyPropertyChanged("PaymentShedule");
+            }
         }
 
         public decimal NDS
         {
             get { return _calcPay.NDS; }
-            set { _calcPay.NDS = value; NotifyPropertyChanged("TotalSum"); NotifyPropertyChanged("PaymentShedule"); }
+            set
+            {
+                _calcPay.NDS = value;
+                NotifyPropertyChanged("NDS");
+                NotifyPropertyChanged("TotalSum");
+                NotifyPropertyChanged("PaymentShedule");
+            }
         }
 
         public decimal ExchangeRate
         {
             get { return _calcPay.ExchangeRate; }
-            set { _calcPay.ExchangeRate = value; NotifyPropertyChanged("TotalSum"); NotifyPropertyChanged("PaymentShedule"); }
+            set
+            {
+                _calcPay.ExchangeRate = value;
+                NotifyPropertyChanged("ExchangeRate");
+                NotifyPropertyChanged("TotalSum");
+                NotifyPropertyChanged("PaymentShedule");
+            }
         }
 
         public DateTime FirstDate
         {
             get { return _calcPay.FirstDate; }
-            set { _calcPay.FirstDate = value; NotifyPropertyChanged("PaymentShedule"); }
+            set
+            {
+                _calcPay.FirstDate = value;
+                NotifyPropertyChanged("FirstDate");
+                NotifyPropertyChanged("PaymentShedule");
+            }
         }
 
         public int CountPayment
         {
             get { return _calcPay.CountPayment; }
-            set { _calcPay.CountPayment = value; NotifyPropertyChanged("TotalSum"); NotifyPropertyChanged("PaymentShedule"); }
+            set 
+            {
+                if (value == 0) return;
+                _calcPay.CountPayment = value;
+                NotifyPropertyChanged("CountPayment");
+                NotifyPropertyChanged("TotalSum");
+                NotifyPropertyChanged("PaymentShedule"); 
+            }
         }
 
         public IEnumerable<PaymentViewModel> PaymentShedule
@@ -69,9 +99,11 @@ namespace WpfAppl
             set 
             {
                 _calcPay.Currency = value;
+                NotifyPropertyChanged("Currency");
                 NotifyPropertyChanged("ExchangeRate");
                 NotifyPropertyChanged("TotalSum");
-                NotifyPropertyChanged("PaymentShedule");}
+                NotifyPropertyChanged("PaymentShedule");
+            }
         }
         
         
